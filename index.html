@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アパレル正社員面接 完全攻略ガイド</title>
+    <style>
+        :root {
+            --main-blue: #4a90e2;
+            --soft-blue: #d0e1f9;
+            --bg-blue: #f0f7ff;
+            --accent-pink: #ff85a2;
+            --card-bg: #ffffff;
+            --text-main: #2b2d42;
+            --text-sub: #5c677d;
+            --good-green: #2a9d8f;
+            --good-bg: #f2fdfb;
+            --intent-purple: #6d597a;
+            --intent-bg: #f9f6fa;
+            --point-bg: #fff8e7;
+            --point-border: #f4a261;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-blue);
+            color: var(--text-main);
+            line-height: 1.65;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        /* ヘッダー */
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, #70a6ff, #4a90e2);
+            color: white;
+            padding: 25px 15px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+
+        /* ぽんちゃん バナー */
+        .chara-banner {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 18px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 3px solid var(--soft-blue);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+        }
+
+        .chara-img-wrap {
+            width: 90px;
+            height: 90px;
+            flex-shrink: 0;
+            background: #e6f2ff;
+            border-radius: 50%;
+            padding: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--soft-blue);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chara-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .chara-text h3 {
+            font-size: 1.05rem;
+            color: var(--main-blue);
+            margin-bottom: 4px;
+        }
+
+        .chara-text p {
+            font-size: 0.88rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        /* タブナビゲーション */
+        .tab-nav {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            min-width: 140px;
+            padding: 12px 10px;
+            background: #ffffff;
+            border: 2px solid var(--soft-blue);
+            border-radius: 14px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: var(--main-blue);
+            color: white;
+            border-color: var(--main-blue);
+            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* 質問カード */
+        .q-card {
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 22px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+            border: 1.5px solid #d8e8ff;
+        }
+
+        .q-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .q-badge {
+            background: var(--main-blue);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .q-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--text-main);
+            line-height: 1.45;
+        }
+
+        /* 詳細エリア */
+        .diagram-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .intent-box {
+            background: var(--intent-bg);
+            border-left: 4px solid var(--intent-purple);
+            border-radius: 10px;
+            padding: 14px 16px;
+        }
+
+        .intent-title {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--intent-purple);
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .intent-text {
+            font-size: 0.88rem;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .point-box {
+            background: var(--point-bg);
+            border-left: 4px solid var(--point-border);
+            border-radius: 10px;
+            padding: 14px 16px;
+        }
+
+        .point-title {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #e76f51;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .point-text {
+            font-size: 0.88rem;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .answer-box {
+            background: var(--good-bg);
+            border: 2px solid var(--good-green);
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 5px;
+        }
+
+        .answer-title {
+            font-size: 0.88rem;
+            font-weight: bold;
+            color: var(--good-green);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .answer-example {
+            background: #ffffff;
+            border-left: 4px solid var(--good-green);
+            padding: 14px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            line-height: 1.75;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: var(--text-sub);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>アパレル正社員面接 完全攻略ガイド</h1>
+        <p>〜自信を持って笑顔で想いを伝える20個の回答＆解説〜</p>
+    </header>
+
+    <!-- キャラクターアドバイス（ぽんちゃん） -->
+    <div class="chara-banner">
+        <div class="chara-img-wrap">
+            <!-- ponchan.png または ponchan.jpg という画像ファイルが同フォルダにあれば自動で画像表示されます -->
+            <img src="ponchan.png" onerror="this.src='ponchan.jpg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='block';};" alt="ぽんちゃん">
+            <svg viewBox="0 0 100 100" width="100%" height="100%" style="display:none;">
+                <!-- ぽんちゃんSVG（バックアップ描画） -->
+                <circle cx="50" cy="50" r="48" fill="#e6f2ff"/>
+                <!-- 白いもこもこ顔 -->
+                <path d="M 50 15 C 65 15 78 22 85 35 C 92 48 88 65 75 72 C 65 78 35 78 25 72 C 12 65 8 48 15 35 C 22 22 35 15 50 15 Z" fill="#ffffff" stroke="#222" stroke-width="2.5"/>
+                <!-- 耳 -->
+                <path d="M 20 38 C 5 42 8 62 20 62 Z" fill="#ffffff" stroke="#222" stroke-width="2.5"/>
+                <path d="M 80 38 C 95 42 92 62 80 62 Z" fill="#ffffff" stroke="#222" stroke-width="2.5"/>
+                <!-- ほっぺ -->
+                <ellipse cx="32" cy="58" rx="4" ry="2" fill="#ff99bb"/>
+                <ellipse cx="68" cy="58" rx="4" ry="2" fill="#ff99bb"/>
+                <!-- 目 -->
+                <ellipse cx="38" cy="50" rx="4.5" ry="6" fill="#222"/>
+                <circle cx="40" cy="48" r="1.5" fill="#fff"/>
+                <ellipse cx="62" cy="50" rx="4.5" ry="6" fill="#222"/>
+                <circle cx="64" cy="48" r="1.5" fill="#fff"/>
+                <!-- 鼻と口 -->
+                <ellipse cx="50" cy="52" rx="3" ry="2" fill="#222"/>
+                <path d="M 45 56 C 45 63 55 63 55 56 Z" fill="#ff6688" stroke="#222" stroke-width="1.8"/>
+                <!-- 青いスタイ -->
+                <path d="M 36 72 C 36 82 64 82 64 72 Z" fill="#4a90e2" stroke="#222" stroke-width="2"/>
+            </svg>
+        </div>
+        <div class="chara-text">
+            <h3>アドバイザー：ぽんちゃん 🐾</h3>
+            <p>「面接官はあなたの素晴らしい経験と志を聞きたがっているよ！自信を持って笑顔でこの物語を伝えようね！」</p>
+        </div>
+    </div>
+
+    <!-- カテゴリタブ -->
+    <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab(0)">1. これまでの歩み<br>(Q1〜Q5)</button>
+        <button class="tab-btn" onclick="switchTab(1)">2. お店・ブランド<br>(Q6〜Q10)</button>
+        <button class="tab-btn" onclick="switchTab(2)">3. 接客・現場対応<br>(Q11〜Q15)</button>
+        <button class="tab-btn" onclick="switchTab(3)">4. 人柄・意気込み<br>(Q16〜Q20)</button>
+    </div>
+
+    <!-- TAB 1: これまでの歩み -->
+    <div class="tab-content active">
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q1</span>
+                <div class="q-title">「高校は諫早農業の食品科学科だったんですね！これまでの経歴と、今回アパレルを目指す想いを教えていただけますか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「高校進学からケーキ屋での経験、そしてアパレルへの挑戦という歩みに一貫したストーリーがあるか」「どんな想いを持ってお客様と向き合ってきた子か」を深く知りたいと考えています。</div>
+                </div>
+                <div class="point-box">
+                    <div class="point-title">🎯 答える際の重要ポイント</div>
+                    <div class="point-text">①「機械系ではなく、人の気分を彩るモノづくり」を選んだ原点を話す。<br>②ケーキ屋での接客で学んだ「お客様の目的に寄り添う丁寧さ」を伝える。<br>③スイーツから服へ、「毎日身につけ自信を引き出すアパレルの魅力」へ惹かれた一貫した軸でまとめる。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文（満点ストーリー）</div>
+                    <div class="answer-example">
+                        「高校進学の際、機械や構造を扱う工業系ではなく、<b>『人の気分をパッと明るくしたり、日々に彩りを与えられるスイーツや食品のものづくり』</b>に魅力を感じ、諫早農業高校の食品科学科を選びました。3年間、衛生管理はもちろん、見た目の美しさや仕上がりの細部にまでこだわる大切さを学びました。<br><br>
+                        卒業後は、大好きなスイーツを通して直接お客様に幸せな時間を届けたいと考え、ケーキ屋の販売員として働いてまいりました。接客の中で『今日のご褒美』や『特別な日』のためにお店に来られるお客様と接し、ご要望に合う商品をご提案して喜んでいただけることが大きなやりがいでした。<br><br>
+                        そうした中で、スイーツのように『日常に彩りを与え、気分を高めてくれる存在』として、<b>『お客様が毎日身につけ、その人らしさや自信を直接引き出すことができるアパレル』</b>の力に惹かれるようになりました。<br><br>
+                        スイーツで学んだ『商品の見た目や取り扱いに対する細やかな配慮』と、販売経験で培った『お客様の目的や好みを汲み取る丁寧な接客』を活かし、お客様の魅力を引き出す一着をご提案したいと考えております。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q2</span>
+                <div class="q-title">「ケーキ屋さんで2年間接客をされていた中で、一番嬉しかったことややりがいは何でしたか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「接客の基礎（笑顔、丁寧さ、相手の目的を察する気配り）が身についているか」「お客様に喜んでもらうことに心から喜びを感じる接客向きの人柄か」を確認したい。</div>
+                </div>
+                <div class="point-box">
+                    <div class="point-title">🎯 答える際の重要ポイント</div>
+                    <div class="point-text">①単に商品を渡すだけでなく「用途や好みをヒアリングして提案した」エピソード。<br>②「お客様から笑顔や感謝のお言葉をいただけた瞬間の喜び」を語ること。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「お客様のお誕生日やご褒美など、大切な用途に合わせてぴったりの商品をご提案し、笑顔でお帰りいただけた瞬間です。『あなたにお勧めしてもらって良かった』と言っていただけた経験は、販売員としての大きな原動力になりました。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q3</span>
+                <div class="q-title">「アパレルの商品はケーキと違って『お洋服』ですが、接客で活かせるご自身の強みは何だと思いますか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「ケーキ屋で培った接客スキルを、アパレルの現場でどう応用できるか自分で自己分析できているか」を見極めたい。</div>
+                </div>
+                <div class="point-box">
+                    <div class="point-title">🎯 答える際の重要ポイント</div>
+                    <div class="point-text">①食品科学科で学んだ「商品の丁寧な取り扱いや見た目の美しさへの配慮」。<br>②ケーキ屋で培った「お客様のお好みや着用シーンをしっかり聞き出すヒアリング力」。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「食品科学科で身につけた『商品を丁寧に扱い、細部まで綺麗に保つ心配り』と、ケーキ屋で培った『お客様のお好みや着用シーンを丁寧に聞き出す会話力』です。お洋服を大切に扱いながら、お客様の魅力を一番引き出せる一着を一緒にお探しできます。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q4</span>
+                <div class="q-title">「10月からEDIONで品出しのアルバイトも始められたんですね！やってみてどうですか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「フットワークの軽さや行動力があるか」「立ち仕事やスピード感のある業務に前向きに取り組めるタフさがあるか」を見ています。</div>
+                </div>
+                <div class="point-box">
+                    <div class="point-title">🎯 答える際の重要ポイント</div>
+                    <div class="point-text">①「丁寧に商品を並べる」「テキパキ動き回る」など前向きな感想を話す。<br>②品出しを通して「アパレルの現場でも活かせる体力や動きの早さが鍛えられている」とアピールする。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「すごく勉強になっています！お客様が見やすく綺麗なお店づくりを意識して商品を並べたり、テキパキと体を動かす楽しさを感じています。アパレルの現場でも活かせる体力や動きの早さにも自信がつきました。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q5</span>
+                <div class="q-title">「もし採用が決まった場合、現在のアルバイト（EDION）との調整は大丈夫そうですか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「正社員としてすぐ入社する本気度があるか」「退職手続きや引き継ぎを周囲に迷惑をかけずにできる誠実さがあるか」を確認しています。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「はい、全く問題ありません！御社での正社員勤務を第一に考えております。現在お世話になっているアルバイト先にも事情はお伝えしておりますので、ご迷惑がかからないようしっかり引き継ぎを行って準備いたします。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- TAB 2: お店・ブランド -->
+    <div class="tab-content">
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q6</span>
+                <div class="q-title">「たくさんの商業施設やお店がある中で、なぜ当店を選んでくれたのですか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「自社店舗への強い関心や好きという熱量があるか」「すぐ辞めずに長く定着してくれるか」を見ています。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「地元のお客様から観光客の方まで笑顔が溢れる賑やかなお店の雰囲気が大好きだからです。特にこちらのお店はスタッフの方の笑顔が温かく、お客様が楽しそうにお買い物されている姿を見て、『私もここで働きたい！』と強く憧れを持ったからです。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q7</span>
+                <div class="q-title">「うちのブランドのお洋服やショップの雰囲気には、どんな印象を持っていますか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「ブランドの世界観や魅力をしっかり理解しているか」「店頭に立つスタッフとしてのイメージが湧くか」を確認したい。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「シンプルながらも着るだけで背筋が伸びて、自分に自信が持てる素敵なお洋服ばかりだと感じています。店内もとても清潔感があり、お客様が落ち着いてお買い物を楽しめる魅力的な空間だと思います。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q8</span>
+                <div class="q-title">「普段はどんなところからファッションやトレンドの情報を見て勉強していますか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「ファッションに対する感度や興味関心が日常的に高いか」「言われてから動くのではなく自発的に学ぶ習慣があるか」を見ています。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「InstagramやWEARで人気のコーディネートをチェックしています。また、休日に店舗を実際に歩いて、季節のカラーや人気の合わせ方を観察して勉強するのも好きです。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q9</span>
+                <div class="q-title">「アパレルの接客は未経験になりますが、不安な気持ちはありますか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「未経験であることを言い訳にせず、ゼロから素直に学んでスピード成長してくれるか」「指導しやすい性格か」を確認したい。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「商品知識など勉強することはたくさんありますが、不安よりも『早く覚えて一押しのスタッフになりたい』という気持ちでいっぱいです。ケーキ屋での接客の基礎を活かし、ゼロから素直に吸収いたします！」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q10</span>
+                <div class="q-title">「もし採用されたら、どんなスタッフを目指したいですか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「将来的な成長イメージを持っているか」「目の前の販売だけでなく正社員として長く意欲を持って働いてくれるか」を見極めたい。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「まずは『〇〇さんに選んでもらえて良かった』とお客様から言って頂ける信頼される販売員になりたいです。将来は後輩の指導や店舗の雰囲気づくりにも貢献できる頼もしい存在を目指します。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- TAB 3: 接客・現場対応 -->
+    <div class="tab-content">
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q11</span>
+                <div class="q-title">「一人で静かに服を見たい雰囲気のお客様には、どんな風にお声がけしますか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「マニュアル通りの押し売り接客をせず、お客様の空気感を察した柔軟な気配りができるか」を見極めたい。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「無理にお話ししようとせず、まずは笑顔で『いらっしゃいませ』とお迎えし、適度な距離を保ちます。商品を手に取られたタイミングなどで『ご試着もできますので、何かあれば声をかけてくださいね』と優しく一言添え、いつでも頼れる雰囲気を作ります。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q12</span>
+                <div class="q-title">「お客様から商品についてお叱りやご意見（クレーム）を受けた時は、どう対応しますか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「パニックにならず冷静に対応できるか」「自己判断で勝手な対応をせず、店長や先輩へ迅速に報告・連絡・相談（ホウレンソウ）できるか」を確認したい。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「不快な思いをさせてしまったことにまず誠心誠意お詫びをし、お話をしっかりと受け止めます。自分勝手な判断はせず、ケーキ屋での経験同様すぐに先輩や店長に状況を正確に報告し、連携して対応いたします。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q13</span>
+                <div class="q-title">「アパレルは立ち仕事ですし体力も使いますが、体調管理や体力を保つ工夫はしていますか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「急な欠勤や体調不良にならず、プロとして安定してシフトを守れるタフさがあるか」を確認したい。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「はい、体力には自信があります！ケーキ屋でも1日立ち仕事でしたし、10月からのEDIONでの品出しバイトでもテキパキ動き回って身体を鍛えています。日頃からしっかり食べて十分な睡眠をとる自己管理も徹底しています。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q14</span>
+                <div class="q-title">「土日祝日や年末年始などの忙しい時期、遅番のシフト勤務は入ることができますか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「お店が一番忙しい時期に前向きにシフトに入り、店舗を支えてくれる頼もしい正社員になってくれるか」を確認したい。（採用理由の大きな決め手になります）</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「はい、喜んで出勤いたします！店舗が一番賑わう土日やイベントの時期こそ、お店の力になれるよう率先してシフトに入り、力になりたいと考えております。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q15</span>
+                <div class="q-title">「個人や店舗の売上目標（数字）に対しては、どんな気持ちで取り組みたいですか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「正社員としての責任感やコスト・売上意識があるか」「ノルマを嫌がらずポジティブに向き合えるか」を見極めたい。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「目標はお店全体で達成する大切なゴールだと考えています！無理な売り込みではなく、『お客様一人ひとりに喜んでいただいた接客の積み重ね』が数字につながると捉え、丁寧な提案を意識して貢献したいです。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- TAB 4: 人柄・意気込み -->
+    <div class="tab-content">
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q16</span>
+                <div class="q-title">「周りのご友人やバイト先の人からは、どんな人だと言われることが多いですか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「客観的な性格や親しみやすさがあるか」「店頭での愛嬌や、職場の人間関係を良くする人柄か」を見たい。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「『いつも笑顔で話しやすい』『細かいところまで気配りができるね』と言っていただけることが多いです。ケーキ屋でもお客様やバイトの仲間とすぐ打ち解けられるのが自分の強みだと思っています。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q17</span>
+                <div class="q-title">「ご自身の『長所（強み）』と『ちょっと苦手なところ（短所）』を教えてください。」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「客観的に自分を把握できているか」「短所に対して改善しようとする前向きな工夫や素直さがあるか」を見たい。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「長所は相手の気持ちの変化に気づく『気配り力』です。短所は一つのことに集中しすぎてしまう点です。そのため日常でも周囲を見渡す意識を持ち、優先順位を確認しながら行動するよう心がけています。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q18</span>
+                <div class="q-title">「職場のスタッフと意見が違ったり、繁忙期でバタバタした時は何を心がけますか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「チームワークを乱さず働けるか」「忙しい時でも感謝の気持ちや謙虚さを持って周囲と協力できるか」を確認したい。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「忙しい時こそ『ありがとうございます』『助かりました』といった感謝の声掛けを徹底します！相手の意見も否定せずしっかり耳を傾け、気持ちよく働けるお店作りに貢献します。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q19</span>
+                <div class="q-title">「これまで何か壁にぶつかったり大変だった時、どうやって乗り越えましたか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「予期せぬ困難や忙しさがあっても感情的にならず、前向きに解決しようとする心のタフさがあるか」を見たい。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「ケーキ屋のクリスマスなどのイベント時期、注文が殺到してパニックになりかけたことがありました。その際、自分ができる優先順位を整理し、仲間と声を掛け合いながら笑顔を絶やさず乗り切ることができました。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-header">
+                <span class="q-badge">Q20</span>
+                <div class="q-title">「最後に、何か聞きたいことや伝えておきたいメッセージはありますか？」</div>
+            </div>
+            <div class="diagram-container">
+                <div class="intent-box">
+                    <div class="intent-title">🧠 面接官が本当に知りたいこと（本音）</div>
+                    <div class="intent-text">「面接を通して志望度がさらに高まったか」「本当にこの会社で働きたい熱量があるか」の最終チェックです。</div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-title">✨ 合格のおすすめ回答例文</div>
+                    <div class="answer-example">
+                        「本日お話しさせていただき、御社で働きたい気持ちがより一層高まりました！食品科学科で学んだこだわり、ケーキ屋での接客と品出しで培った体力を活かして精一杯貢献いたします！本日はありがとうございました！」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>🌸 あなたの「彩りを届けたい」という想いは本当に素敵です！ぽんちゃんも応援しているよ！ 🌸</p>
+    </footer>
+</div>
+
+<script>
+    function switchTab(index) {
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => content.classList.remove('active'));
+
+        buttons[index].classList.add('active');
+        contents[index].classList.add('active');
+
+        window.scrollTo({
+            top: 200,
+            behavior: 'smooth'
+        });
+    }
+</script>
+
+</body>
+</html>
