@@ -1,0 +1,1 @@
+# minemotok.github.io
